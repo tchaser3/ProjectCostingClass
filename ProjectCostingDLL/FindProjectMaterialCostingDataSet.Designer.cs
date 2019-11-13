@@ -287,6 +287,10 @@ namespace ProjectCostingDLL {
             
             private global::System.Data.DataColumn columnTotalQuantity;
             
+            private global::System.Data.DataColumn columnPrice;
+            
+            private global::System.Data.DataColumn columnPartPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FindProjectMaterialCostingDataTable() {
@@ -354,6 +358,22 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PriceColumn {
+                get {
+                    return this.columnPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PartPriceColumn {
+                get {
+                    return this.columnPartPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -389,13 +409,15 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindProjectMaterialCostingRow AddFindProjectMaterialCostingRow(int PartID, string PartNumber, string PartDescription, int TotalQuantity) {
+            public FindProjectMaterialCostingRow AddFindProjectMaterialCostingRow(int PartID, string PartNumber, string PartDescription, int TotalQuantity, double Price, double PartPrice) {
                 FindProjectMaterialCostingRow rowFindProjectMaterialCostingRow = ((FindProjectMaterialCostingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PartID,
                         PartNumber,
                         PartDescription,
-                        TotalQuantity};
+                        TotalQuantity,
+                        Price,
+                        PartPrice};
                 rowFindProjectMaterialCostingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFindProjectMaterialCostingRow);
                 return rowFindProjectMaterialCostingRow;
@@ -422,6 +444,8 @@ namespace ProjectCostingDLL {
                 this.columnPartNumber = base.Columns["PartNumber"];
                 this.columnPartDescription = base.Columns["PartDescription"];
                 this.columnTotalQuantity = base.Columns["TotalQuantity"];
+                this.columnPrice = base.Columns["Price"];
+                this.columnPartPrice = base.Columns["PartPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,12 +459,18 @@ namespace ProjectCostingDLL {
                 base.Columns.Add(this.columnPartDescription);
                 this.columnTotalQuantity = new global::System.Data.DataColumn("TotalQuantity", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalQuantity);
+                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrice);
+                this.columnPartPrice = new global::System.Data.DataColumn("PartPrice", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartPrice);
                 this.columnPartID.AllowDBNull = false;
                 this.columnPartNumber.AllowDBNull = false;
                 this.columnPartNumber.MaxLength = 2147483647;
                 this.columnPartDescription.AllowDBNull = false;
                 this.columnPartDescription.MaxLength = 2147483647;
                 this.columnTotalQuantity.ReadOnly = true;
+                this.columnPrice.AllowDBNull = false;
+                this.columnPartPrice.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -633,6 +663,34 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Price {
+                get {
+                    return ((double)(this[this.tableFindProjectMaterialCosting.PriceColumn]));
+                }
+                set {
+                    this[this.tableFindProjectMaterialCosting.PriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double PartPrice {
+                get {
+                    try {
+                        return ((double)(this[this.tableFindProjectMaterialCosting.PartPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartPrice\' in table \'FindProjectMaterialCosting\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableFindProjectMaterialCosting.PartPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTotalQuantityNull() {
                 return this.IsNull(this.tableFindProjectMaterialCosting.TotalQuantityColumn);
             }
@@ -641,6 +699,18 @@ namespace ProjectCostingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalQuantityNull() {
                 this[this.tableFindProjectMaterialCosting.TotalQuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPartPriceNull() {
+                return this.IsNull(this.tableFindProjectMaterialCosting.PartPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPartPriceNull() {
+                this[this.tableFindProjectMaterialCosting.PartPriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -807,6 +877,8 @@ namespace ProjectCostingDLL.FindProjectMaterialCostingDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PartNumber", "PartNumber");
             tableMapping.ColumnMappings.Add("PartDescription", "PartDescription");
             tableMapping.ColumnMappings.Add("TotalQuantity", "TotalQuantity");
+            tableMapping.ColumnMappings.Add("Price", "Price");
+            tableMapping.ColumnMappings.Add("PartPrice", "PartPrice");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
