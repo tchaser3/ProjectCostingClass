@@ -31,7 +31,7 @@ namespace ProjectCostingDLL
             {
                 aFindProjectMaterialCostingDataSet = new FindProjectMaterialCostingDataSet();
                 aFindProjectMaterialCostingTableAdapter = new FindProjectMaterialCostingDataSetTableAdapters.FindProjectMaterialCostingTableAdapter();
-                aFindProjectMaterialCostingTableAdapter.Fill(aFindProjectMaterialCostingDataSet.FindProjectMaterialCosting, strAssignedProjectID):
+                aFindProjectMaterialCostingTableAdapter.Fill(aFindProjectMaterialCostingDataSet.FindProjectMaterialCosting, strAssignedProjectID);
             }
             catch (Exception Ex)
             {
