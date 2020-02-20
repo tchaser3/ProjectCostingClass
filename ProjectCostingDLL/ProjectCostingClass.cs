@@ -25,6 +25,24 @@ namespace ProjectCostingDLL
         FindProjectMaterialCostingDataSet aFindProjectMaterialCostingDataSet;
         FindProjectMaterialCostingDataSetTableAdapters.FindProjectMaterialCostingTableAdapter aFindProjectMaterialCostingTableAdapter;
 
+        FindEmployeeProjectLaborCostsDataSet aFindEmployeeProjectLaborCostsDataSet;
+        FindEmployeeProjectLaborCostsDataSetTableAdapters.FindEmployeeProjectLaborCostsTableAdapter aFindEmployeeProjectLaborCostsTableAdapter;
+
+        public FindEmployeeProjectLaborCostsDataSet FindEmployeeProjectLaborCosts(string strAssignedProjectID)
+        {
+            try
+            {
+                aFindEmployeeProjectLaborCostsDataSet = new FindEmployeeProjectLaborCostsDataSet();
+                aFindEmployeeProjectLaborCostsTableAdapter = new FindEmployeeProjectLaborCostsDataSetTableAdapters.FindEmployeeProjectLaborCostsTableAdapter();
+                aFindEmployeeProjectLaborCostsTableAdapter.Fill(aFindEmployeeProjectLaborCostsDataSet.FindEmployeeProjectLaborCosts, strAssignedProjectID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Project Cosing Class // Find Employee Project Labor Costs " + Ex.Message);
+            }
+
+            return aFindEmployeeProjectLaborCostsDataSet;
+        }
         public FindProjectMaterialCostingDataSet FindProjectMaterialCosting(string strAssignedProjectID)
         {
             try

@@ -44,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FindEmployeeProjectLaborCostsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindEmployeeProjectLaborCostsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FindProjectHoursCostingDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +69,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="FindEmployeeProjectLaborCostsDataSet.xsc">
+      <DependentUpon>FindEmployeeProjectLaborCostsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindEmployeeProjectLaborCostsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindEmployeeProjectLaborCostsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindEmployeeProjectLaborCostsDataSet.xss">
+      <DependentUpon>FindEmployeeProjectLaborCostsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="FindProjectHoursCostingDataSet.xsc">
       <DependentUpon>FindProjectHoursCostingDataSet.xsd</DependentUpon>
     </None>
