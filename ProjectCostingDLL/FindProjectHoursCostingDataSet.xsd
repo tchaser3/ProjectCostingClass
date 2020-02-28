@@ -27,6 +27,7 @@
               <Mapping SourceColumn="TaskID" DataSetColumn="TaskID" />
               <Mapping SourceColumn="WorkTask" DataSetColumn="WorkTask" />
               <Mapping SourceColumn="TotalHours" DataSetColumn="TotalHours" />
+              <Mapping SourceColumn="LaborCost" DataSetColumn="LaborCost" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -38,7 +39,7 @@
   <xs:element name="FindProjectHoursCostingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="FindProjectHoursCostingDataSet" msprop:Generator_UserDSName="FindProjectHoursCostingDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FindProjectHoursCosting" msprop:Generator_TableClassName="FindProjectHoursCostingDataTable" msprop:Generator_TableVarName="tableFindProjectHoursCosting" msprop:Generator_TablePropName="FindProjectHoursCosting" msprop:Generator_RowDeletingName="FindProjectHoursCostingRowDeleting" msprop:Generator_RowChangingName="FindProjectHoursCostingRowChanging" msprop:Generator_RowEvHandlerName="FindProjectHoursCostingRowChangeEventHandler" msprop:Generator_RowDeletedName="FindProjectHoursCostingRowDeleted" msprop:Generator_UserTableName="FindProjectHoursCosting" msprop:Generator_RowChangedName="FindProjectHoursCostingRowChanged" msprop:Generator_RowEvArgName="FindProjectHoursCostingRowChangeEvent" msprop:Generator_RowClassName="FindProjectHoursCostingRow">
+        <xs:element name="FindProjectHoursCosting" msprop:Generator_TableClassName="FindProjectHoursCostingDataTable" msprop:Generator_TableVarName="tableFindProjectHoursCosting" msprop:Generator_RowChangedName="FindProjectHoursCostingRowChanged" msprop:Generator_TablePropName="FindProjectHoursCosting" msprop:Generator_RowDeletingName="FindProjectHoursCostingRowDeleting" msprop:Generator_RowChangingName="FindProjectHoursCostingRowChanging" msprop:Generator_RowEvHandlerName="FindProjectHoursCostingRowChangeEventHandler" msprop:Generator_RowDeletedName="FindProjectHoursCostingRowDeleted" msprop:Generator_RowClassName="FindProjectHoursCostingRow" msprop:Generator_UserTableName="FindProjectHoursCosting" msprop:Generator_RowEvArgName="FindProjectHoursCostingRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
@@ -64,6 +65,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="TotalHours" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalHours" msprop:Generator_ColumnPropNameInRow="TotalHours" msprop:Generator_ColumnPropNameInTable="TotalHoursColumn" msprop:Generator_UserColumnName="TotalHours" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LaborCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLaborCost" msprop:Generator_ColumnPropNameInRow="LaborCost" msprop:Generator_ColumnPropNameInTable="LaborCostColumn" msprop:Generator_UserColumnName="LaborCost" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

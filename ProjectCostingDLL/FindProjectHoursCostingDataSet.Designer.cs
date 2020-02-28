@@ -289,6 +289,8 @@ namespace ProjectCostingDLL {
             
             private global::System.Data.DataColumn columnTotalHours;
             
+            private global::System.Data.DataColumn columnLaborCost;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public FindProjectHoursCostingDataTable() {
@@ -364,6 +366,14 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LaborCostColumn {
+                get {
+                    return this.columnLaborCost;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public FindProjectHoursCostingRow AddFindProjectHoursCostingRow(string FirstName, string LastName, int TaskID, string WorkTask, decimal TotalHours) {
+            public FindProjectHoursCostingRow AddFindProjectHoursCostingRow(string FirstName, string LastName, int TaskID, string WorkTask, decimal TotalHours, decimal LaborCost) {
                 FindProjectHoursCostingRow rowFindProjectHoursCostingRow = ((FindProjectHoursCostingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         FirstName,
                         LastName,
                         TaskID,
                         WorkTask,
-                        TotalHours};
+                        TotalHours,
+                        LaborCost};
                 rowFindProjectHoursCostingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFindProjectHoursCostingRow);
                 return rowFindProjectHoursCostingRow;
@@ -434,6 +445,7 @@ namespace ProjectCostingDLL {
                 this.columnTaskID = base.Columns["TaskID"];
                 this.columnWorkTask = base.Columns["WorkTask"];
                 this.columnTotalHours = base.Columns["TotalHours"];
+                this.columnLaborCost = base.Columns["LaborCost"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -449,6 +461,8 @@ namespace ProjectCostingDLL {
                 base.Columns.Add(this.columnWorkTask);
                 this.columnTotalHours = new global::System.Data.DataColumn("TotalHours", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalHours);
+                this.columnLaborCost = new global::System.Data.DataColumn("LaborCost", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLaborCost);
                 this.columnFirstName.AllowDBNull = false;
                 this.columnFirstName.MaxLength = 2147483647;
                 this.columnLastName.AllowDBNull = false;
@@ -457,6 +471,7 @@ namespace ProjectCostingDLL {
                 this.columnWorkTask.AllowDBNull = false;
                 this.columnWorkTask.MaxLength = 2147483647;
                 this.columnTotalHours.ReadOnly = true;
+                this.columnLaborCost.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -659,6 +674,22 @@ namespace ProjectCostingDLL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal LaborCost {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableFindProjectHoursCosting.LaborCostColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LaborCost\' in table \'FindProjectHoursCosting\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFindProjectHoursCosting.LaborCostColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsTotalHoursNull() {
                 return this.IsNull(this.tableFindProjectHoursCosting.TotalHoursColumn);
             }
@@ -667,6 +698,18 @@ namespace ProjectCostingDLL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalHoursNull() {
                 this[this.tableFindProjectHoursCosting.TotalHoursColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLaborCostNull() {
+                return this.IsNull(this.tableFindProjectHoursCosting.LaborCostColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLaborCostNull() {
+                this[this.tableFindProjectHoursCosting.LaborCostColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -834,6 +877,7 @@ namespace ProjectCostingDLL.FindProjectHoursCostingDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TaskID", "TaskID");
             tableMapping.ColumnMappings.Add("WorkTask", "WorkTask");
             tableMapping.ColumnMappings.Add("TotalHours", "TotalHours");
+            tableMapping.ColumnMappings.Add("LaborCost", "LaborCost");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
