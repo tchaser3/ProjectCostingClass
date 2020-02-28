@@ -28,6 +28,24 @@ namespace ProjectCostingDLL
         FindEmployeeProjectLaborCostsDataSet aFindEmployeeProjectLaborCostsDataSet;
         FindEmployeeProjectLaborCostsDataSetTableAdapters.FindEmployeeProjectLaborCostsTableAdapter aFindEmployeeProjectLaborCostsTableAdapter;
 
+        FindProjectTaskCostsDataSet aFindProjectTaskCostsDataSet;
+        FindProjectTaskCostsDataSetTableAdapters.FindProjectTaskCostsTableAdapter aFindProjectTaskCostsTableAdapter;
+
+        public FindProjectTaskCostsDataSet FindProjectTasksCosts(string strAssignedProjectID)
+        {
+            try
+            {
+                aFindProjectTaskCostsDataSet = new FindProjectTaskCostsDataSet();
+                aFindProjectTaskCostsTableAdapter = new FindProjectTaskCostsDataSetTableAdapters.FindProjectTaskCostsTableAdapter();
+                aFindProjectTaskCostsTableAdapter.Fill(aFindProjectTaskCostsDataSet.FindProjectTaskCosts, strAssignedProjectID);
+            }
+            catch (Exception Ex)
+            {
+                TheEventLogClass.InsertEventLogEntry(DateTime.Now, "Project Costing Class // Find Project Tasks Costs " + Ex.Message);
+            }
+
+            return aFindProjectTaskCostsDataSet;
+        }
         public FindEmployeeProjectLaborCostsDataSet FindEmployeeProjectLaborCosts(string strAssignedProjectID)
         {
             try

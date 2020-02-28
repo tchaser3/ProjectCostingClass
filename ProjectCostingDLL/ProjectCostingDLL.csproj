@@ -59,6 +59,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FindProjectMaterialCostingDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FindProjectTaskCostsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FindProjectTaskCostsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ProjectCostingClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -101,6 +106,17 @@
     </None>
     <None Include="FindProjectMaterialCostingDataSet.xss">
       <DependentUpon>FindProjectMaterialCostingDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindProjectTaskCostsDataSet.xsc">
+      <DependentUpon>FindProjectTaskCostsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FindProjectTaskCostsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FindProjectTaskCostsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FindProjectTaskCostsDataSet.xss">
+      <DependentUpon>FindProjectTaskCostsDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
